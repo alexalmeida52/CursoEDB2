@@ -7,13 +7,14 @@ public class Sorter {
 
     private void mergerSort(int[] numeros, int inicio, int fim) {
         if(fim <= inicio){
-            return;
+            return; // T(1) = c'
         }
+        // T(n) =
         int meio = Math.floorDiv(inicio + fim, 2);
 
-        mergerSort(numeros, inicio, meio);
-        mergerSort(numeros, meio + 1, fim);
-        merge(numeros, inicio, meio, fim);
+        mergerSort(numeros, inicio, meio); // T(n/2)
+        mergerSort(numeros, meio + 1, fim); // T(n/2)
+        merge(numeros, inicio, meio, fim); // cn
 
 
     }
